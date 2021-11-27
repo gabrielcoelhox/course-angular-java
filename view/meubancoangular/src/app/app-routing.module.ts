@@ -1,3 +1,4 @@
+import { ClientesComponent } from './pages/clientes/clientes.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 
@@ -8,6 +9,7 @@ import { SaqueComponent } from './pages/saque/saque.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: 'clientes', component: ClientesComponent},
   {path: 'extrato', component: ExtratoComponent},
   {path: 'saque', component: SaqueComponent},
   {path: 'deposito', component: DepositoComponent}
