@@ -1,1 +1,130 @@
-<p>cadastro-cliente works!</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"/>
+
+<div class="container">
+  <br/>
+  <h1 class="text-center">Cadastro de Pessoa Física</h1>
+  <br/>
+
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px">
+      <h6 class="divider-text">
+        <span class="teste1">Você está dando os primeiros passos para abrir uma conta. Preencha seus dados para um pré-cadastro.</span>
+      </h6>
+      <form>
+
+        <!-- Nome Completo -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            name=""
+            class="form-control"
+            placeholder="Nome Completo"
+            type="text"/>
+        </div>
+
+        <!-- CPF -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fas fa-address-card"></i>
+            </span>
+          </div>
+          <input
+            name="cpf"
+            class="form-control cpf-mask"
+            placeholder="CPF"
+            type="text"/>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input
+            name=""
+            class="form-control"
+            placeholder="Email"
+            type="email"/>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <select class="custom-select" style="max-width: 120px">
+            <option selected="">PB 83</option>
+            <option value="1">RN 84</option>
+            <option value="2">AL 82</option>
+            <option value="3">PE 81</option>
+            <option value="3">BA 71</option>
+            <option value="3">PR 41</option>
+            <option value="3">MG 31</option>
+            <option value="3">RJ 21</option>
+            <option value="3">SP 11</option>
+          </select>
+          <input
+            name=""
+            class="form-control"
+            placeholder="Telefone"
+            type="text"/>
+        </div>
+
+        <!-- Profissão -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-building"></i>
+            </span>
+          </div>
+          <select class="form-control">
+            <option selected="">Profissão</option>
+            <option>Neymar</option>
+            <option>Gabigol</option>
+            <option>Ronaldinho</option>
+          </select>
+        </div>
+
+        <!-- Senha -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            placeholder="Senha"
+            type="password"/>
+        </div>
+
+        <!-- Confirmar senha -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            placeholder="Confirmar senha"
+            type="password"/>
+        </div>
+
+        <!-- Criar conta -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-dark btn-block">Criar Conta</button>
+        </div>
+
+        <!-- Já tem conta -->
+        <p class="text-center">Já tem uma conta? <a href="">Login</a></p>
+      </form>
+    </article>
+  </div>
+  <!-- card.// -->
+</div>
+<br/>
