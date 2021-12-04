@@ -20,4 +20,8 @@ export class ContasService {
   saque(saque: ISaqueDeposito){
     return this.http.post(`${this.api}/saque`, saque);
   }
+
+  deposito(saque: ISaqueDeposito){
+    return this.http.post(`${this.api}/deposito`, saque);
+  }
 }
