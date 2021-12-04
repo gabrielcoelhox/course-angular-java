@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ISaqueDeposito } from 'src/app/interfaces/saque-deposito';
+import { ContasService } from 'src/app/services/contas.service';
 
 @Component({
   selector: 'app-saque',
@@ -7,13 +12,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SaqueComponent implements OnInit {
 
-  @Input()
-  titulo: string = 'Meu título';
-  exibir: boolean = true;
-
-  constructor() { }
+  constructor(
+    private contasService: ContasService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  formGroup: FormGroup = new FormGroup({
+    'agencia' : new FormControl('', Validators.required),
+    'numeroConta' : new FormControl('', Validators.required),
+    'valor' : new FormControl('', Validators.required)
+  });
+
+  sacar() {
+    const saque: ISaqueDeposito = this.formGroup.value;
+    this.contasService.saque(saque).subscribe(clienteAPI => {
+      Swal.fire('FUNFOU!');
+      this.router.navigate(['/saque']);
+  }, error => {
+    console.log(error);
+  });
+  }
 }
