@@ -28,10 +28,3 @@
 .form-control.ng-touched.ng-valid {
   border:1px solid green;
 }
-
-.d1 {
-  position: absolute;
-  left: 68%;
-  margin-top: 86.5px;
-  font-size: 12px;
-}

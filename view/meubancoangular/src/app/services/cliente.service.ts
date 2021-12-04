@@ -1,0 +1,18 @@
+import { ICliente } from './../interfaces/cliente';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ClienteService {
+
+  api = `${environment.api}/clientes/`;
+
+  constructor(private http: HttpClient) { }
+
+  listarTodosClientes() {
+    return this.http.get<ICliente[]>(this.api);
+  }
+}

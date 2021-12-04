@@ -17,6 +17,8 @@ import { ValorComponent } from './components/valor/valor.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { CadastroClienteComponent } from './pages/clientes/cadastro-cliente/cadastro-cliente.component';
+import { HttpClientModule} from '@angular/common/http';
+import { ContasComponent } from './pages/contas/contas.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,15 @@ import { CadastroClienteComponent } from './pages/clientes/cadastro-cliente/cada
     ButtonComponent,
     ValorComponent,
     ClientesComponent,
-    CadastroClienteComponent
+    CadastroClienteComponent,
+    ContasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
