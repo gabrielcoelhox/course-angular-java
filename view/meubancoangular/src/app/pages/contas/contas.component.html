@@ -1,1 +1,31 @@
-<p>contas works!</p>
+<h1>Contas</h1>
+
+<div *ngIf="!contas.length" class="text-center">
+  <p>Carregando...</p>
+  <br />
+  <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+</div>
+<br />
+
+<table *ngIf="contas.length" class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Agência</th>
+      <th scope="col">Conta</th>
+      <th scope="col">Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let conta of contas;">
+      <td>{{ conta.id }}</td>
+      <td>{{ conta.cliente.nome }}</td>
+      <td>{{ conta.agencia }}</td>
+      <td>{{ conta.numero }}</td>
+      <td>{{ conta.saldo | currency: 'BRL'}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<a class="btn btn-dark" routerLink="/cadastro-cliente" routerLinkActive="active">Cadastrar</a>

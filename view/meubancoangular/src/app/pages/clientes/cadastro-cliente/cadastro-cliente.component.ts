@@ -1,5 +1,9 @@
+import { ICliente } from './../../../interfaces/cliente';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -8,40 +12,44 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CadastroClienteComponent implements OnInit {
 
-  exform!: FormGroup;
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router) { }
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-
-    this.exform = new FormGroup({
-      'name' : new FormControl(null, Validators.required),
-      'cpf' : new FormControl(null, Validators.required),
+    formGroup: FormGroup = new FormGroup({
+      'id' : new FormControl(null),
+      'name' : new FormControl('', Validators.required),
+      'cpf' : new FormControl('', Validators.required),
       'email' : new FormControl(null, [Validators.required, Validators.email]),
-      'telefone' : new FormControl(null,[
-          Validators.required,
-          Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{3})(?: *x(\\d+))?\\s*$')
-        ])
+      'observacoes' : new FormControl(''),
+      'ativo' : new FormControl(true)
+    });
+
+  enviar() {
+    const cliente: ICliente = this.formGroup.value;
+    this.clienteService.cadastrar(cliente).subscribe(clienteAPI => {
+      Swal.fire('FUNFOU!', 'Cadastrado com sucesso!');
+      this.router.navigate(['/clientes']);
+    }, error => {
+      console.log(error);
     });
   }
 
-  botaoCadastro() {
-    alert('Cadastro efetuado com sucesso!');
-    console.log(this.exform.value);
-    this.exform.reset();
+  get id() {
+    return this.formGroup.get('id');
   }
-
   get name() {
-    return this.exform.get('name');
+    return this.formGroup.get('name');
   }
   get cpf() {
-    return this.exform.get('cpf');
+    return this.formGroup.get('cpf');
   }
   get email() {
-    return this.exform.get('email');
+    return this.formGroup.get('email');
   }
-  get telefone() {
-    return this.exform.get('telefone');
+  get observacoes() {
+    return this.formGroup.get('observacoes');
   }
-
 }
