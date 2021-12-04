@@ -13,18 +13,21 @@
       <h6 class="divider-text">
         <span class="teste1">Você está dando os primeiros passos para abrir uma conta. Preencha seus dados para um pré-cadastro.</span>
       </h6>
-      <form>
+      <form [formGroup]="exform">
 
         <!-- Nome Completo -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
           </div>
           <input
-            name=""
+            formControlName="name"
+            name="name"
+            id="name"
             class="form-control"
             placeholder="Nome Completo"
-            type="text"/>
+            type="text">
+          <small *ngIf="name?.invalid && name?.touched" class="text-danger d1"></small>
         </div>
 
         <!-- CPF -->
@@ -35,10 +38,12 @@
             </span>
           </div>
           <input
+            formControlName="cpf"
             name="cpf"
-            class="form-control cpf-mask"
+            class="form-control"
             placeholder="CPF"
-            type="text"/>
+            type="text">
+          <small *ngIf="cpf?.invalid && cpf?.touched" class="text-danger"></small>
         </div>
 
         <!-- Email -->
@@ -49,10 +54,12 @@
             </span>
           </div>
           <input
+            formControlName="email"
             name=""
             class="form-control"
             placeholder="Email"
-            type="email"/>
+            type="email">
+          <small *ngIf="email?.invalid && email?.touched" class="text-danger"></small>
         </div>
 
         <!-- Telefone -->
@@ -61,21 +68,23 @@
             <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
           </div>
           <select class="custom-select" style="max-width: 120px">
-            <option selected="">PB 83</option>
-            <option value="1">RN 84</option>
-            <option value="2">AL 82</option>
-            <option value="3">PE 81</option>
-            <option value="3">BA 71</option>
-            <option value="3">PR 41</option>
-            <option value="3">MG 31</option>
-            <option value="3">RJ 21</option>
-            <option value="3">SP 11</option>
+            <option selected="">83</option>
+            <option value="1">84</option>
+            <option value="2">82</option>
+            <option value="3">81</option>
+            <option value="3">71</option>
+            <option value="3">41</option>
+            <option value="3">31</option>
+            <option value="3">21</option>
+            <option value="3">11</option>
           </select>
           <input
+            formControlName="telefone"
             name=""
             class="form-control"
             placeholder="Telefone"
-            type="text"/>
+            type="text">
+          <small *ngIf="telefone?.invalid && telefone?.touched" class="text-danger"></small>
         </div>
 
         <!-- Profissão -->
@@ -87,9 +96,11 @@
           </div>
           <select class="form-control">
             <option selected="">Profissão</option>
-            <option>Neymar</option>
-            <option>Gabigol</option>
-            <option>Ronaldinho</option>
+            <option>Analista de Sistemas</option>
+            <option>Analista de Dados</option>
+            <option>Big Data</option>
+            <option>Desenvolvedor Angular</option>
+            <option>Desenvolvedor Java</option>
           </select>
         </div>
 
@@ -107,7 +118,7 @@
         <!-- Confirmar senha -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            <span class="input-group-text"> <i class="fa fa-lock"></i></span>
           </div>
           <input
             class="form-control"
@@ -117,7 +128,7 @@
 
         <!-- Criar conta -->
         <div class="form-group">
-          <button type="submit" class="btn btn-dark btn-block">Criar Conta</button>
+          <button (click)="botaoCadastro()" type="button" class="btn btn-dark btn-block">Criar Conta</button>
         </div>
 
         <!-- Já tem conta -->
@@ -125,6 +136,5 @@
       </form>
     </article>
   </div>
-  <!-- card.// -->
 </div>
 <br/>
