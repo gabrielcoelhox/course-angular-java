@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IContas } from './../interfaces/contas';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ITransferencia } from '../interfaces/transferencia';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,11 @@ export class ContasService {
     return this.http.post(`${this.api}/saque`, saque);
   }
 
-  deposito(saque: ISaqueDeposito){
-    return this.http.post(`${this.api}/deposito`, saque);
+  deposito(deposito: ISaqueDeposito){
+    return this.http.post(`${this.api}/deposito`, deposito);
+  }
+
+  transferencia(transferencia: ITransferencia){
+    return this.http.post(`${this.api}/transferencia`, transferencia);
   }
 }

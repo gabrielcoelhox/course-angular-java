@@ -8,6 +8,7 @@ import { DepositoComponent } from './pages/deposito/deposito.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { CadastroClienteComponent } from './pages/clientes/cadastro-cliente/cadastro-cliente.component';
 import { ContasComponent } from './pages/contas/contas.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'extrato', component: ExtratoComponent},
   {path: 'saque', component: SaqueComponent},
   {path: 'deposito', component: DepositoComponent},
-  {path: 'cadastro-cliente', component: CadastroClienteComponent}
+  {path: 'cadastro-cliente', component: CadastroClienteComponent},
+  {path: 'transferencia', component: TransferenciaComponent}
 ];
 
 @NgModule({

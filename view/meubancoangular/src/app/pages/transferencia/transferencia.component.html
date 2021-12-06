@@ -1,0 +1,85 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css">
+
+<div class="container">
+<br/>
+  <h1 class="text-center">Transferência</h1>
+<br/>
+
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px">
+      <h6 class="divider-text">
+        <span class="teste1">Você está dando os primeiros passos para cadastrar um cliente. Preencha os dados para um pré-cadastro.</span>
+      </h6>
+      <form [formGroup]="formGroup" (ngSubmit)="transferir()">
+
+        <!-- Agência Origem -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-location"></i></span>
+          </div>
+          <input
+            formControlName = "agenciaOrigem"
+            type = "text"
+            class = "form-control"
+            placeholder="Agência de Origem">
+        </div>
+
+        <!-- Conta Origem -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-location"></i></span>
+          </div>
+            <input
+            formControlName = "numeroContaOrigem"
+            type = "text"
+            class = "form-control"
+            placeholder="Conta de Origem">
+        </div>
+
+        <!-- Agência Destino -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-paperplane"></i></span>
+          </div>
+            <input
+            formControlName = "agenciaDestino"
+            type = "text"
+            class = "form-control"
+            placeholder="Agência de Destino">
+        </div>
+
+        <!-- Conta Destino -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-paperplane"></i></span>
+          </div>
+            <input
+            formControlName = "numeroContaDestino"
+            type = "text"
+            class = "form-control"
+            placeholder="Conta de Destino">
+        </div>
+
+        <!-- Valor -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-banknote"></i></span>
+          </div>
+            <input
+            formControlName = "valor"
+            type = "text"
+            class = "form-control"
+            placeholder="Valor">
+        </div>
+
+        <!-- Transferir -->
+        <div class="form-group">
+          <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark btn-block">Transferir</button>
+        </div>
+      </form>
+    </article>
+  </div>
+</div>
