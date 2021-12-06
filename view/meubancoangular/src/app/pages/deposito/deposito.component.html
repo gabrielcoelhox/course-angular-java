@@ -27,23 +27,34 @@
             placeholder="Agência">
         </div>
 
-          <div class="col">
-            <label>Número da Conta</label>
-            <input type = "text"
-            class = "form-control"
-            formControlName = "numeroConta">
+         <!-- Número da Conta -->
+         <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-barcode"></i></span>
           </div>
-          <div class="col">
-            <label>Valor</label>
-            <input type = "text"
+          <input
+            formControlName = "numeroConta"
+            type = "text"
             class = "form-control"
-            formControlName = "valor">
-          </div>
+            placeholder="Número da Conta">
+        </div>
 
-          <!-- Sacar -->
-          <div class="form-group">
-          <button type="submit" class="btn btn-dark">Depositar</button>
+        <!-- Valor -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-banknote"></i></span>
           </div>
+          <input
+            formControlName = "valor"
+            type = "text"
+            class = "form-control"
+            placeholder="Valor">
+        </div>
+
+        <!-- Depositar -->
+        <div class="form-group">
+          <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark btn-block">Depositar</button>
+        </div>
       </form>
     </article>
   </div>
