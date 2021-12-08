@@ -1,0 +1,87 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css">
+
+<div class="container">
+<br/>
+  <h1 class="text-center">Cadastro de Conta</h1>
+<br/>
+
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px">
+      <h6 class="divider-text">
+        <span class="teste1">Você está dando os primeiros passos para cadastrar uma conta. Preencha os campos para efetuar o cadastro.</span>
+      </h6>
+      <form [formGroup]="formGroup" (ngSubmit)="cadastrarConta()">
+
+        <!-- Cliente -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="im im-user-male"></i></span>
+          </div>
+          <input
+            formControlName="cliente"
+            class="form-control"
+            placeholder="Cliente"
+            type="text">
+          <small *ngIf="cliente?.invalid && cliente?.touched" class="text-danger"></small>
+        </div>
+
+        <!-- Agência -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="im im-bank"></i>
+            </span>
+          </div>
+          <input
+            formControlName="agencia"
+            class="form-control"
+            placeholder="Agência"
+            type="text">
+          <small *ngIf="agencia?.invalid && agencia?.touched" class="text-danger"></small>
+        </div>
+
+        <!-- Conta -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="im im-barcode"></i>
+            </span>
+          </div>
+          <input
+            formControlName="numero"
+            class="form-control"
+            placeholder="Conta"
+            type="text">
+          <small *ngIf="numero?.invalid && numero?.touched" class="text-danger"></small>
+        </div>
+
+        <!-- Saldo -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="im im-banknote"></i>
+            </span>
+          </div>
+          <input
+            formControlName="saldo"
+            name=""
+            class="form-control"
+            placeholder="Valor"
+            type="text">
+          <small *ngIf="saldo?.invalid && saldo?.touched" class="text-danger"></small>
+        </div>
+
+        <!-- Cadastrar nova Conta -->
+        <div class="form-group">
+          <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark btn-block">Cadastrar Nova Conta</button>
+        </div>
+      </form>
+    </article>
+  </div>
+</div>
+
+
+

@@ -1,9 +1,9 @@
-import { IClientedetalhe } from "./clientedetalhe";
+import { ICliente } from "./cliente";
 
 export interface IContas {
   id: number;
   agencia: string;
-  cliente: IClientedetalhe;
+  cliente: ICliente;
   saldo: number;
-  numero: number;
+  numero: string;
 }

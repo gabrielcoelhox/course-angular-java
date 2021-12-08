@@ -12,35 +12,31 @@ import Swal from 'sweetalert2';
 })
 export class CadastroClienteComponent implements OnInit {
 
+    formGroup: FormGroup = new FormGroup({
+      nome: new FormControl('', Validators.required),
+      cpf: new FormControl('', Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      observacoes: new FormControl(''),
+      ativo: new FormControl(true)
+    });
+
   constructor(
     private clienteService: ClienteService,
     private router: Router) { }
 
   ngOnInit(): void {}
 
-    formGroup: FormGroup = new FormGroup({
-      'id' : new FormControl(null),
-      'name' : new FormControl('', Validators.required),
-      'cpf' : new FormControl('', Validators.required),
-      'email' : new FormControl(null, [Validators.required, Validators.email]),
-      'observacoes' : new FormControl(''),
-      'ativo' : new FormControl(true)
-    });
-
   enviar() {
     const cliente: ICliente = this.formGroup.value;
     this.clienteService.cadastrar(cliente).subscribe(clienteAPI => {
-      Swal.fire('FUNFOU!', 'Cadastrado com sucesso!');
+      Swal.fire('Cadastrado com sucesso!');
       this.router.navigate(['/clientes']);
     }, error => {
       console.log(error);
     });
   }
 
-  get id() {
-    return this.formGroup.get('id');
-  }
-  get name() {
+  get nome() {
     return this.formGroup.get('name');
   }
   get cpf() {

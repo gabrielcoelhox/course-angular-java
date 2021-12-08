@@ -20,6 +20,7 @@
       <th scope="col">Agência</th>
       <th scope="col">Conta</th>
       <th scope="col">Saldo</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -29,8 +30,11 @@
       <td>{{ conta.agencia }}</td>
       <td>{{ conta.numero }}</td>
       <td>{{ conta.saldo | currency: 'BRL'}}</td>
+      <td>
+        <a class="btn btn-danger btn-sm" (click)="confirmar(conta.id)">Remover</a>
+      </td>
     </tr>
   </tbody>
 </table>
 
-<a class="btn btn-dark" routerLink="/cadastro-cliente" routerLinkActive="active">Cadastrar</a>
+<a class="btn btn-dark" routerLink="/cadastro-conta" routerLinkActive="active">Cadastrar Conta</a>

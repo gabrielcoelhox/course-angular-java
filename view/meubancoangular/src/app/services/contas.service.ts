@@ -4,6 +4,7 @@ import { IContas } from './../interfaces/contas';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ITransferencia } from '../interfaces/transferencia';
+import { ICadastroConta } from '../interfaces/cadastro-conta';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,13 @@ export class ContasService {
 
   transferencia(transferencia: ITransferencia){
     return this.http.post(`${this.api}/transferencia`, transferencia);
+  }
+
+  cadastrar(contas: ICadastroConta) {
+    return this.http.post<ICadastroConta>(this.api, contas);
+  }
+
+  remover(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
   }
 }

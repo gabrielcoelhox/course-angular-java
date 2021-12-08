@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ExtratoComponent } from './pages/extrato/extrato.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -21,13 +20,13 @@ import { HttpClientModule} from '@angular/common/http';
 import { ContasComponent } from './pages/contas/contas.component';
 import { CadastroEdicaoClientesComponent } from './pages/clientes/cadastro-edicao-clientes/cadastro-edicao-clientes.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+import { CadastroContaComponent } from './pages/contas/cadastro-conta/cadastro-conta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ExtratoComponent,
     SaqueComponent,
     DepositoComponent,
     HomeComponent,
@@ -40,7 +39,8 @@ import { TransferenciaComponent } from './pages/transferencia/transferencia.comp
     CadastroClienteComponent,
     ContasComponent,
     CadastroEdicaoClientesComponent,
-    TransferenciaComponent
+    TransferenciaComponent,
+    CadastroContaComponent
   ],
   imports: [
     BrowserModule,

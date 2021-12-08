@@ -15,34 +15,17 @@
       </h6>
       <form [formGroup]="formGroup" (ngSubmit)="enviar()">
 
-        <!-- ID -->
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-hashtag"></i></span>
-          </div>
-          <input
-            formControlName="id"
-            name="id"
-            id="id"
-            class="form-control"
-            placeholder="ID"
-            type="text">
-          <small *ngIf="name?.invalid && name?.touched" class="text-danger"></small>
-        </div>
-
         <!-- Nome Completo -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-user"></i></span>
           </div>
           <input
-            formControlName="name"
-            name="name"
-            id="name"
+            formControlName="nome"
             class="form-control"
             placeholder="Nome Completo"
             type="text">
-          <small *ngIf="name?.invalid && name?.touched" class="text-danger"></small>
+          <small *ngIf="nome?.invalid && nome?.touched" class="text-danger"></small>
         </div>
 
         <!-- CPF -->
@@ -54,7 +37,6 @@
           </div>
           <input
             formControlName="cpf"
-            name="cpf"
             class="form-control"
             placeholder="CPF"
             type="text">
@@ -70,7 +52,6 @@
           </div>
           <input
             formControlName="email"
-            name=""
             class="form-control"
             placeholder="Email"
             type="email">
@@ -85,7 +66,7 @@
 
         <!-- Criar conta -->
         <div class="form-group">
-          <button [disabled]="!formGroup.valid" (click)="enviar()" type="submit" class="btn btn-dark btn-block">Cadastrar Cliente</button>
+          <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark btn-block">Cadastrar Cliente</button>
         </div>
       </form>
     </article>
