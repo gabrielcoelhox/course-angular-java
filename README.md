@@ -63,7 +63,7 @@ $ A aplicação será aberta na porta:8080 - acesse http://localhost:8080
 ![GIF](github/saque.gif)
 
 ### Transferência
-![GIF](github/deposito.gif)
+![GIF](github/transferencia.gif)
   
 ### Cadastro de Cliente
 ![GIF](github/cadastrocliente.gif)
