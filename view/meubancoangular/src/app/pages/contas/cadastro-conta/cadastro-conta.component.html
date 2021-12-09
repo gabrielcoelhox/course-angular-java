@@ -15,17 +15,17 @@
       </h6>
       <form [formGroup]="formGroup" (ngSubmit)="cadastrarConta()">
 
-        <!-- Cliente -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="im im-user-male"></i></span>
           </div>
-          <input
-            formControlName="cliente"
-            class="form-control"
-            placeholder="Cliente"
-            type="text">
-          <small *ngIf="cliente?.invalid && cliente?.touched" class="text-danger"></small>
+          <select
+          name="select-simples"
+          class="form-control teste1"
+          formControlName="cliente">
+            <option value="" hidden>Selecionar Cliente</option>
+            <option *ngFor="let cliente of clientes" [ngValue]="cliente">{{cliente.nome}}</option>
+          </select>
         </div>
 
         <!-- Agência -->

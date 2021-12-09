@@ -1,5 +1,3 @@
-import { ICliente } from "./cliente";
-
 export interface ICadastroConta {
   agencia: string,
   cliente: {

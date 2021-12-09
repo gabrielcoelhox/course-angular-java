@@ -1,9 +1,11 @@
+import { ICliente } from './../../../interfaces/cliente';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContasService } from 'src/app/services/contas.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ICadastroConta } from 'src/app/interfaces/cadastro-conta';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-cadastro-conta',
@@ -12,12 +14,17 @@ import { ICadastroConta } from 'src/app/interfaces/cadastro-conta';
 })
 export class CadastroContaComponent implements OnInit {
 
+  clientes: ICliente[] = [];
+
   constructor(
     private contasService: ContasService,
+    private clienteService: ClienteService,
     private router: Router
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getClientes();
+  }
 
   formGroup: FormGroup = new FormGroup ({
     agencia: new FormControl('', Validators.required),
@@ -25,6 +32,12 @@ export class CadastroContaComponent implements OnInit {
     numero: new FormControl('', Validators.required),
     saldo: new FormControl('', Validators.required)
   });
+
+  getClientes() {
+    this.clienteService.listarTodosClientes().subscribe(c => {
+      this.clientes = c;
+    })
+  }
 
   cadastrarConta() {
     const cadastroConta: ICadastroConta = this.formGroup.value;
