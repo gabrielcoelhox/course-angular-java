@@ -20,8 +20,6 @@
 
 Este projeto foi desenvolvido como exercício e avaliação do curso de *__Formação Java e Angular - Uniesp__*. A proposta do projeto é criar um sistema de um banco fictício, onde possa ser realizado o CRUD(Criar, ler, atualizar e deletar) das informações obtidas por meio de uma API fornecida pelo professor.
 
- ![IMG](github/img.png)
-
 ## <a id="id2">:hammer_and_wrench: Como executar o projeto
 
 ### Pré-requisitos
@@ -58,30 +56,20 @@ $ A aplicação será aberta na porta:8080 - acesse http://localhost:8080
 
 ## <a id="id3"> 🖼️ Demonstração </a>
 
-<details>
-<summary><strong>Depósito</strong></summary>
-![GIF](gitub/deposito.gif)
-</details>
+### Depósito
+![GIF](github/deposito.gif)
  
-<details>
-<summary><strong>Saque</strong></summary>
-![GIF](gitub/saque.gif)
-</details>
+### Saque
+![GIF](github/saque.gif)
 
-<details>
-<summary><strong>Transferência</strong></summary>
-![GIF](gitub/deposito.gif)
-</details>
+### Transferência
+![GIF](github/deposito.gif)
   
-<details>
-<summary><strong>Cadastro Cliente</strong></summary>
-![GIF](gitub/cadastrocliente.gif)
-</details>
+### Cadastro de Cliente
+![GIF](github/cadastrocliente.gif)
   
-<details>
-<summary><strong>Cadastro Conta</strong></summary>
-![GIF](gitub/cadastroconta.gif)
-</details>
+### Cadastro de Conta
+![GIF](github/cadastroconta.gif)
  
 [nodejs]: https://nodejs.org/
 [angular]: https://angular.io/
